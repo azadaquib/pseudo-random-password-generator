@@ -1,9 +1,6 @@
 
 'use strict'
 
-import * as MersenneTwister from 'seedRandom.js'
-//  var passPhrase = document.getElementById('passphrase')
-
 var md5hash = '5d41402abc4b2a76b9719d911017c592'
 var l = md5hash.length
 var sum = 0
@@ -29,3 +26,17 @@ var m = new MersenneTwister(sum)
 var randomNumber = m.random()
 
 document.write('<br/>' + randomNumber + '<br/>')
+
+/*
+  Dynammically change password as typed
+*/
+
+var randSeed = Math.round(randomNumber * 1000000000)
+
+document.write('<br/>' + randSeed + '<br/>')
+
+var passwordArray = new Array()
+
+for (let i = 0; i < 94; i++) {
+  passwordArray.append(32 + i)
+}
