@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title> Password </title>
+
+        <script src='script/md5.js' > </script>
+
+
+
+        <script src="script/seedRandom.js"> </script>
+
+    </head>
+
+    <body>
+        <script>
+          var m = new MersenneTwister(5413);
+
+          for(var i=0; i <10; i++) {
+
+            var randomNumber = m.random();
+            document.write(randomNumber + "<br\>");
+          }
+
+          document.write(md5("hello"));
+
+
+        </script>
+
+        <script src="script/script.js"> </script>
+
+
+    </body>
+
+
+</html>
