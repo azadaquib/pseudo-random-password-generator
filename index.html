@@ -3,33 +3,40 @@
 
 <html>
     <head>
-        <title> Password </title>
+        <title> Password Form</title>
 
-        <script src='vendors/js/md5.js' > </script>
-
-        <!-- <script src="script/script.js"> </script> -->
-
-        <script src="vendors/js/seedRandom.js"> </script>
+        <script src='script/md5.js' > </script>
+        <script src="script/seedRandom.js"> </script>
+        <script src="script/script.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 
     </head>
 
     <body>
 
+      <script>
+          function generate() {
+            var newPassword = generatePassword(document.getElementById('passphrase').value, document.getElementById('password').value)
+            alert(passphrase + "\n" + password)
+            //alert(newPassword)
+
+            document.write('<br/>' + newPassword + '<br/>')
+            return false;
+          }
+      </script>
+
         <header>
-
             <h1>Unique Password Generator</h1>
-
         </header>
 
 
-
         <div id="container">
-            <form target="%_blank">
+            <form onsubmit="return generate()" class="my-form">
                 <fieldset>
                     <legend> Pasword Form</legend>
 
                     <label for="passphrase">Passphrase: </label>
-                    <input type="text" size="8" id="passphrase">
+                    <input type="text" size="16" id="passphrase">
 
                     <br/>
                     <br/>
@@ -40,21 +47,12 @@
                     <br/>
                     <br/>
 
-                    <input type="submit" name"submit" id="passphrase">
+                    <input type="submit" name="submit" id="submit_password">
                     <input type="reset" name="clear">
 
-
                 </fieldset>
-
-
             </form>
-
         </div>
 
-        <p>
-          <script type="JavaScript">
-              document.write(md5("Hello"));
-          </script>
-        </p>
     </body>
 </html>
