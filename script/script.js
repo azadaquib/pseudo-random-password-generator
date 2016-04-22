@@ -14,6 +14,13 @@ Math.seededRandom = function (max, min) {
   return min + rnd * (max - min)
 }
 
+
+/*
+  Random password generation function
+  Accepts a password and passhrase and crpts it
+*/
+
+
 function generatePassword(passphrase, password) {
 
   var examplePassword = password
